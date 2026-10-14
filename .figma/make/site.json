@@ -1,0 +1,10 @@
+{
+  "description": "Create personalized birthday websites effortlessly, perfect for celebrating loved ones like Linh's aunt Lụa with custom messages and designs.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

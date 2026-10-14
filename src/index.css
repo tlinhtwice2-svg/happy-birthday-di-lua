@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,500&display=swap");
+@import "tailwindcss";
+
+:root {
+  font-family: "Be Vietnam Pro", sans-serif;
+  color: #4f3434;
+  background: #f8eee8;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button {
+  font: inherit;
+}
+
+.nav-pill {
+  border-radius: 999px;
+  padding: 0.65rem 1rem;
+  color: #80615f;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition:
+    color 200ms ease,
+    background 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.nav-pill:hover {
+  color: #753f47;
+}
+
+.nav-pill:focus-visible {
+  outline: 2px solid #8e4b55;
+  outline-offset: 2px;
+}
+
+.nav-pill-active {
+  color: white;
+  background: #8e4b55;
+  box-shadow: 0 5px 14px rgb(117 63 71 / 0.2);
+}
+
+.font-serif {
+  font-family: "Playfair Display", serif;
+}
+
+.birthday-card::before,
+.birthday-card::after {
+  position: absolute;
+  width: 9rem;
+  height: 9rem;
+  border: 1px solid rgb(169 95 104 / 0.13);
+  border-radius: 999px;
+  content: "";
+}
+
+.birthday-card::before {
+  top: -5.5rem;
+  left: -4rem;
+}
+
+.birthday-card::after {
+  right: -4rem;
+  bottom: -5.5rem;
+}
+
+.ambient {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(2px);
+}
+
+.ambient-one {
+  top: -10rem;
+  left: 15%;
+  width: 24rem;
+  height: 24rem;
+  background: rgb(237 195 190 / 0.4);
+}
+
+.ambient-two {
+  right: 4%;
+  bottom: -12rem;
+  width: 30rem;
+  height: 30rem;
+  background: rgb(201 215 192 / 0.45);
+}
+
+.sparkle {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  background: #c7937e;
+  opacity: 0.6;
+  transform: rotate(45deg);
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.sparkle::after {
+  position: absolute;
+  inset: 3px -4px;
+  background: #f8eee8;
+  content: "";
+}
+
+.cake {
+  position: relative;
+  width: 105px;
+  height: 98px;
+}
+
+.cake span {
+  position: absolute;
+  display: block;
+}
+
+.flame {
+  top: 0;
+  left: 49px;
+  width: 12px;
+  height: 17px;
+  border-radius: 70% 30% 65% 35%;
+  background: #dd9a55;
+  box-shadow: 0 0 16px rgb(221 154 85 / 0.55);
+  transform: rotate(45deg);
+  animation: flicker 1.7s ease-in-out infinite;
+}
+
+.candle {
+  top: 19px;
+  left: 51px;
+  width: 8px;
+  height: 27px;
+  border-radius: 2px;
+  background: repeating-linear-gradient(
+    -35deg,
+    #f0c3ba 0,
+    #f0c3ba 5px,
+    #fffaf7 5px,
+    #fffaf7 9px
+  );
+}
+
+.cake-body {
+  top: 50px;
+  left: 15px;
+  width: 80px;
+  height: 36px;
+  border-radius: 5px 5px 12px 12px;
+  background: #c77b7d;
+}
+
+.frosting {
+  z-index: 1;
+  top: 43px;
+  left: 15px;
+  width: 80px;
+  height: 19px;
+  border-radius: 50% 50% 40% 40%;
+  background: #f2d7cd;
+  box-shadow:
+    12px 7px 0 -3px #f2d7cd,
+    30px 7px 0 -3px #f2d7cd,
+    48px 6px 0 -3px #f2d7cd;
+}
+
+.cake-plate {
+  bottom: 3px;
+  left: 4px;
+  width: 102px;
+  height: 8px;
+  border-radius: 50%;
+  background: #b4c0a5;
+}
+
+.gallery-image {
+  animation: photo-in 600ms ease both;
+}
+
+.gallery-control {
+  border: 1px solid rgb(255 255 255 / 0.55);
+  border-radius: 999px;
+  padding: 0.6rem 0.9rem;
+  color: white;
+  background: rgb(62 40 40 / 0.45);
+  backdrop-filter: blur(8px);
+  font-size: 0.72rem;
+  font-weight: 600;
+  transition: background 200ms ease;
+}
+
+.gallery-control:hover {
+  background: rgb(62 40 40 / 0.75);
+}
+
+.gallery-control:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+@keyframes photo-in {
+  from {
+    opacity: 0.4;
+    transform: scale(1.035);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: rotate(45deg) scale(0.7);
+  }
+  50% {
+    opacity: 0.75;
+    transform: rotate(45deg) scale(1);
+  }
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    transform: rotate(45deg) scale(1);
+  }
+  50% {
+    transform: rotate(40deg) scale(0.88);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
