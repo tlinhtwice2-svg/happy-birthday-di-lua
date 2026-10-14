@@ -114,74 +114,40 @@ button {
   content: "";
 }
 
-.cake {
-  position: relative;
-  width: 105px;
-  height: 98px;
+.cake-flame {
+  transform-origin: 80px 20px;
+  animation: cake-flicker 1.8s ease-in-out infinite;
 }
 
-.cake span {
-  position: absolute;
-  display: block;
+.cake-glow {
+  transform-origin: 80px 14px;
+  animation: cake-glow-pulse 2.2s ease-in-out infinite;
 }
 
-.flame {
-  top: 0;
-  left: 49px;
-  width: 12px;
-  height: 17px;
-  border-radius: 70% 30% 65% 35%;
-  background: #dd9a55;
-  box-shadow: 0 0 16px rgb(221 154 85 / 0.55);
-  transform: rotate(45deg);
-  animation: flicker 1.7s ease-in-out infinite;
+@keyframes cake-flicker {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.08, 0.94) rotate(-3deg);
+  }
+  50% {
+    transform: scale(0.95, 1.06) rotate(2deg);
+  }
+  75% {
+    transform: scale(1.05, 0.97) rotate(-1.5deg);
+  }
 }
 
-.candle {
-  top: 19px;
-  left: 51px;
-  width: 8px;
-  height: 27px;
-  border-radius: 2px;
-  background: repeating-linear-gradient(
-    -35deg,
-    #f0c3ba 0,
-    #f0c3ba 5px,
-    #fffaf7 5px,
-    #fffaf7 9px
-  );
-}
-
-.cake-body {
-  top: 50px;
-  left: 15px;
-  width: 80px;
-  height: 36px;
-  border-radius: 5px 5px 12px 12px;
-  background: #c77b7d;
-}
-
-.frosting {
-  z-index: 1;
-  top: 43px;
-  left: 15px;
-  width: 80px;
-  height: 19px;
-  border-radius: 50% 50% 40% 40%;
-  background: #f2d7cd;
-  box-shadow:
-    12px 7px 0 -3px #f2d7cd,
-    30px 7px 0 -3px #f2d7cd,
-    48px 6px 0 -3px #f2d7cd;
-}
-
-.cake-plate {
-  bottom: 3px;
-  left: 4px;
-  width: 102px;
-  height: 8px;
-  border-radius: 50%;
-  background: #b4c0a5;
+@keyframes cake-glow-pulse {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.2);
+  }
 }
 
 .gallery-image {
@@ -232,15 +198,6 @@ button {
   }
 }
 
-@keyframes flicker {
-  0%,
-  100% {
-    transform: rotate(45deg) scale(1);
-  }
-  50% {
-    transform: rotate(40deg) scale(0.88);
-  }
-}
 
 @media (prefers-reduced-motion: reduce) {
   *,

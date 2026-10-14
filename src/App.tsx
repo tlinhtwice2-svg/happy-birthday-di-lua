@@ -73,6 +73,148 @@ function FloralSprig({ className = "" }: { className?: string }) {
   );
 }
 
+function BirthdayCake({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden="true"
+      className={className}
+      viewBox="0 0 160 140"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <radialGradient id="flame-halo" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#ffb03a" stopOpacity="0.8" />
+          <stop offset="50%" stopColor="#ff7a30" stopOpacity="0.3" />
+          <stop offset="100%" stopColor="#ff5030" stopOpacity="0" />
+        </radialGradient>
+        <linearGradient id="cake-grad-bottom" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#d9828b" />
+          <stop offset="100%" stopColor="#bc646f" />
+        </linearGradient>
+        <linearGradient id="cake-grad-top" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#e39199" />
+          <stop offset="100%" stopColor="#c8707a" />
+        </linearGradient>
+        <linearGradient id="frosting-grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="100%" stopColor="#faece6" />
+        </linearGradient>
+      </defs>
+
+      {/* Plate */}
+      <ellipse cx="80" cy="131" rx="58" ry="7" fill="#ebdcd4" />
+      <path
+        d="M22 126 C22 135 138 135 138 126 L134 130 C134 136 26 136 26 130 Z"
+        fill="#d2b8b3"
+      />
+      <ellipse
+        cx="80"
+        cy="126"
+        rx="56"
+        ry="7.5"
+        fill="#fdfaf7"
+        stroke="#debdb7"
+        strokeWidth="1.5"
+      />
+
+      {/* Bottom Tier Cake */}
+      <path
+        d="M36 90 C36 90 36 120 40 121 C48 123 112 123 120 121 C124 120 124 90 124 90 Z"
+        fill="url(#cake-grad-bottom)"
+      />
+      {/* Cream Layer between tiers */}
+      <path
+        d="M37 105 Q80 110 123 105"
+        stroke="#faece6"
+        strokeWidth="3"
+        strokeLinecap="round"
+      />
+
+      {/* Bottom Tier Dripping Frosting */}
+      <path
+        d="M36 88 C36 88 39 101 44 101 C49 101 50 93 55 93 C60 93 62 102 67 102 C72 102 74 94 79 94 C84 94 86 102 91 102 C96 102 98 94 103 94 C108 94 110 101 115 101 C120 101 124 88 124 88 C124 83 36 83 36 88 Z"
+        fill="url(#frosting-grad)"
+        stroke="#edd1c7"
+        strokeWidth="1"
+      />
+
+      {/* Decorative sprinkles on bottom tier */}
+      <circle cx="48" cy="113" r="2" fill="#ffd470" />
+      <circle cx="70" cy="115" r="2.2" fill="#8cb297" />
+      <circle cx="92" cy="114" r="2" fill="#ffffff" />
+      <circle cx="112" cy="112" r="2.2" fill="#f09ea7" />
+
+      {/* Top Tier Cake */}
+      <path
+        d="M52 62 C52 62 52 87 55 88 C60 90 100 90 105 88 C108 87 108 62 108 62 Z"
+        fill="url(#cake-grad-top)"
+      />
+
+      {/* Top Tier Dripping Frosting */}
+      <path
+        d="M52 62 C52 62 55 74 60 74 C65 74 67 67 72 67 C77 67 79 75 84 75 C89 75 91 67 96 67 C101 67 103 73 106 73 C108 73 108 62 108 62 C108 57 52 57 52 62 Z"
+        fill="url(#frosting-grad)"
+        stroke="#edd1c7"
+        strokeWidth="1"
+      />
+
+      {/* Topping Berries */}
+      <circle cx="63" cy="56" r="4.5" fill="#c43f4f" />
+      <circle cx="64" cy="54" r="1.5" fill="#f89da8" />
+      <circle cx="97" cy="56" r="4.5" fill="#c43f4f" />
+      <circle cx="98" cy="54" r="1.5" fill="#f89da8" />
+
+      {/* Candle */}
+      <rect
+        x="76.5"
+        y="28"
+        width="7"
+        height="28"
+        rx="2"
+        fill="#fffbf8"
+        stroke="#f2c8bf"
+        strokeWidth="1"
+      />
+      {/* Candle stripes */}
+      <path
+        d="M76.5 34 L83.5 38 M76.5 41 L83.5 45 M76.5 48 L83.5 52"
+        stroke="#cf6b76"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      {/* Candle wick */}
+      <path
+        d="M80 28 L80 21"
+        stroke="#593b3e"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+      />
+
+      {/* Candle Flame & Glow */}
+      <circle
+        cx="80"
+        cy="14"
+        r="14"
+        fill="url(#flame-halo)"
+        className="cake-glow"
+      />
+      <g className="cake-flame">
+        {/* Outer flame */}
+        <path
+          d="M80 5 C75 11 74 16 76.5 19 C78 20.5 82 20.5 83.5 19 C86 16 85 11 80 5 Z"
+          fill="#ff9829"
+        />
+        {/* Inner flame */}
+        <path
+          d="M80 9 C77 13 77 16 78 17.5 C79 18.5 81 18.5 82 17.5 C83 16 83 13 80 9 Z"
+          fill="#fff5c0"
+        />
+      </g>
+    </svg>
+  );
+}
+
 function Navigation({
   page,
   onNavigate,
@@ -114,13 +256,7 @@ function BirthdayCard() {
         <span className="h-px w-8 bg-[#d8a8a3]" />
       </div>
 
-      <div className="cake mx-auto mb-8" aria-hidden="true">
-        <span className="flame" />
-        <span className="candle" />
-        <span className="frosting" />
-        <span className="cake-body" />
-        <span className="cake-plate" />
-      </div>
+      <BirthdayCake className="mx-auto mb-8 w-36 h-32 sm:w-40 sm:h-36 drop-shadow-sm" />
 
       <p className="mb-2 font-serif text-xl italic text-[#8a5a5d] sm:text-2xl">
         Chúc mừng sinh nhật
