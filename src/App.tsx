@@ -298,7 +298,10 @@ export default function App() {
   const [page, setPage] = useState<Page>("card");
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#f8eee8] px-5 py-10 text-[#4f3434]">
+    <main
+      translate="no"
+      className="notranslate relative min-h-screen overflow-hidden bg-[#f8eee8] px-5 py-10 text-[#4f3434]"
+    >
       <Navigation page={page} onNavigate={setPage} />
       <div className="ambient ambient-one" />
       <div className="ambient ambient-two" />

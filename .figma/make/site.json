@@ -1,5 +1,7 @@
 {
-  "description": "Create personalized birthday websites effortlessly, perfect for celebrating loved ones like Linh's aunt Lụa with custom messages and designs.",
+  "title": "Chúc mừng sinh nhật Dì Lụa",
+  "language": "vi",
+  "description": "Trang web chúc mừng sinh nhật dành tặng riêng cho dì Lụa.",
   "robots": {
     "index": false
   },
